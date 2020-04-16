@@ -1,0 +1,115 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "\"tnVOtk4NeGU6nDncDTE5m9SmuHc/NQcBO7VNzmIzsOAmiraD6fljrSc\"",
+  "pageInfo": {
+   "totalResults": 1,
+   "resultsPerPage": 1
+  },
+  "items": [
+   {
+    "kind": "youtube#video",
+    "etag": "\"tnVOtk4NeGU6nDncDTE5m9SmuHc/BieTXcS4cyMAnQb0NWnLBfJwg04\"",
+    "id": "UeAKTjx_eKA",
+    "snippet": {
+     "publishedAt": "2018-11-09T17:38:15.000Z",
+     "channelId": "UClcE-kVhqyiHCcjYwcpfj9w",
+     "title": "Student Finds Hidden Devices in the College Library - Are they nefarious?",
+     "description": "A reddit user finds raspberry pi zeros hidden behind trash cans, vending machines and other places in the college library. We reverse engineer them and determine if they are malicious.\n\nDirtyCOW video including \"files\" in Linux: https://www.youtube.com/watch?v=kEsshExn7aE\n\n-=[ 🔴 Stuff I use ]=-\n\n→ Microphone:* https://geni.us/ntg3b\n→ Graphics tablet:* https://geni.us/wacom-intuos\n→ Camera#1 for streaming:* https://geni.us/sony-camera\n→ Lens for streaming:* https://geni.us/sony-lense\n→ Connect Camera#1 to PC:* https://geni.us/cam-link\n→ Keyboard:* https://geni.us/mech-keyboard\n→ Old Microphone:* https://geni.us/mic-at2020usb\n\nUS Store Front:* https://www.amazon.com/shop/liveoverflow\n\n-=[ ❤️ Support ]=-\n\n→ per Video: https://www.patreon.com/join/liveoverflow\n→ per Month: https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/join\n\n-=[ 🐕 Social ]=-\n\n→ Twitter: https://twitter.com/LiveOverflow/\n→ Website: https://liveoverflow.com/\n→ Subreddit: https://www.reddit.com/r/LiveOverflow/\n→ Facebook: https://www.facebook.com/LiveOverflow/\n\n-=[ 📄 P.S. ]=-\n\nAll links with \"*\" are affiliate links.\nLiveOverflow / Security Flag GmbH is part of the Amazon Affiliate Partner Programm.\n\n#ReverseEngineering",
+     "thumbnails": {
+      "default": {
+       "url": "https://i.ytimg.com/vi/UeAKTjx_eKA/default.jpg",
+       "width": 120,
+       "height": 90
+      },
+      "medium": {
+       "url": "https://i.ytimg.com/vi/UeAKTjx_eKA/mqdefault.jpg",
+       "width": 320,
+       "height": 180
+      },
+      "high": {
+       "url": "https://i.ytimg.com/vi/UeAKTjx_eKA/hqdefault.jpg",
+       "width": 480,
+       "height": 360
+      },
+      "standard": {
+       "url": "https://i.ytimg.com/vi/UeAKTjx_eKA/sddefault.jpg",
+       "width": 640,
+       "height": 480
+      },
+      "maxres": {
+       "url": "https://i.ytimg.com/vi/UeAKTjx_eKA/maxresdefault.jpg",
+       "width": 1280,
+       "height": 720
+      }
+     },
+     "channelTitle": "LiveOverflow",
+     "tags": [
+      "Live Overflow",
+      "liveoverflow",
+      "hacking tutorial",
+      "how to hack",
+      "exploit tutorial",
+      "raspberry pi",
+      "raspberry pi zero",
+      "raspbi",
+      "raspbian",
+      "boot partition",
+      "fdisk",
+      "waitz",
+      "ucsd",
+      "waitz app",
+      "cellege library",
+      "student",
+      "computer science",
+      "sd card image",
+      "mounting file",
+      "loopback device",
+      "reverse engineering",
+      "embedded device",
+      "linux",
+      "jd-gui",
+      "python",
+      "credentials",
+      "mqtt",
+      "wifi",
+      "tshark",
+      "tcpdump",
+      "bluemon",
+      "bluetooth",
+      "hidden devices",
+      "penetration testing",
+      "mitm",
+      "man in the middle",
+      "pentester",
+      "red teaming",
+      "read team",
+      "wifi hack"
+     ],
+     "categoryId": "27",
+     "liveBroadcastContent": "none",
+     "defaultLanguage": "en",
+     "localized": {
+      "title": "Student Finds Hidden Devices in the College Library - Are they nefarious?",
+      "description": "A reddit user finds raspberry pi zeros hidden behind trash cans, vending machines and other places in the college library. We reverse engineer them and determine if they are malicious.\n\nDirtyCOW video including \"files\" in Linux: https://www.youtube.com/watch?v=kEsshExn7aE\n\n-=[ 🔴 Stuff I use ]=-\n\n→ Microphone:* https://geni.us/ntg3b\n→ Graphics tablet:* https://geni.us/wacom-intuos\n→ Camera#1 for streaming:* https://geni.us/sony-camera\n→ Lens for streaming:* https://geni.us/sony-lense\n→ Connect Camera#1 to PC:* https://geni.us/cam-link\n→ Keyboard:* https://geni.us/mech-keyboard\n→ Old Microphone:* https://geni.us/mic-at2020usb\n\nUS Store Front:* https://www.amazon.com/shop/liveoverflow\n\n-=[ ❤️ Support ]=-\n\n→ per Video: https://www.patreon.com/join/liveoverflow\n→ per Month: https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/join\n\n-=[ 🐕 Social ]=-\n\n→ Twitter: https://twitter.com/LiveOverflow/\n→ Website: https://liveoverflow.com/\n→ Subreddit: https://www.reddit.com/r/LiveOverflow/\n→ Facebook: https://www.facebook.com/LiveOverflow/\n\n-=[ 📄 P.S. ]=-\n\nAll links with \"*\" are affiliate links.\nLiveOverflow / Security Flag GmbH is part of the Amazon Affiliate Partner Programm.\n\n#ReverseEngineering"
+     },
+     "defaultAudioLanguage": "en"
+    },
+    "contentDetails": {
+     "duration": "PT18M27S",
+     "dimension": "2d",
+     "definition": "hd",
+     "caption": "true",
+     "licensedContent": true,
+     "projection": "rectangular"
+    },
+    "statistics": {
+     "viewCount": "3962670",
+     "likeCount": "92118",
+     "dislikeCount": "6420",
+     "favoriteCount": "0",
+     "commentCount": "8502"
+    }
+   }
+  ]
+ }
+ 
