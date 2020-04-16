@@ -1,7 +1,8 @@
 const express = require("express");
 const session = require("express-session");
-const db = require("./database");
+//const db = require("./database");
 const app = express();
+require("dotenv").config();
 
 app.use("/static", express.static("public"));
 app.use(express.json());
