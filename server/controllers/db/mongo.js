@@ -10,6 +10,7 @@ let users;
   db = client.db('forbid');
   // Import modules
   exports.user = require('./user')(db);
+  exports.comment = require('./comment')(db);
   //run playground
-  await exports.user.playground();
+  await exports.comment.playground();
 })().catch((err) => console.error(err));

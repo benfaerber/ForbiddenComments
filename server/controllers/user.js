@@ -15,3 +15,13 @@ exports.loadUser = async (id, callback) => {
   let found = await mongo.user.getUser(id);
   callback(null, found);
 };
+
+exports.anon = () => {
+  const data = {
+    id: -1,
+    name: 'Anonymous',
+    pfp: 'http://localhost:8080/static/anon256.png',
+    locale: 'ww',
+  };
+  return new User(data);
+};

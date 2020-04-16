@@ -4,8 +4,8 @@ const app = express();
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-//const db = require("./database");
 const userController = require('./controllers/user');
+const youtubeController = require('./controllers/youtube');
 const User = require('./models/User');
 
 require('dotenv').config();
@@ -47,13 +47,24 @@ passport.use(
 
 // Home page
 app.get('/', (req, res) => {
-  if (req.session.passport && req.session.passport.user) {
-    console.log(req.user);
-  }
   res.render('index');
 });
 
-// API
+// Youtube API
+app.get('/video', (req, res) => {
+  const { v } = req.query;
+  if (v) {
+    youtubeController.getVideo(v, (vid) => {
+      console.log(vid);
+      vid['status'] = 'ok';
+      res.json(vid);
+    });
+  } else {
+    res.json({ status: 'error' });
+  }
+});
+
+// User Data
 app.get('/user', (req, res) => {
   if (req.user) {
     let json = req.user;
@@ -79,6 +90,11 @@ app.get(
     res.redirect('/');
   }
 );
+
+app.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
 
 passport.serializeUser((user, done) => {
   done(null, user);
