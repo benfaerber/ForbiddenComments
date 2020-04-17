@@ -24,7 +24,7 @@ module.exports = (db, ObjectId) => {
     const now = Math.round(new Date().getTime() / 1000);
     await cc.updateOne(
       { _id: oId },
-      { $set: { publishedAt: now, text: newText, edited: true } }
+      { $set: { editedAt: now, text: newText, edited: true } }
     );
   };
 
@@ -33,9 +33,37 @@ module.exports = (db, ObjectId) => {
     await cc.updateOne({ _id: oId }, { $set: { deleted: true } });
   };
 
-  module.playground = async () => {
-    //console.log('hello');
+  module.getParentComments = async (videoId, chunk) => {
+    // Comments grabbed per request
+    const chunkSize = 20;
+
+    let results = await cc
+      .find({
+        $and: [{ deleted: false }, { parent: null }, { video: videoId }],
+      })
+      .toArray();
+
+    let startLocation = chunk * chunkSize;
+    let endLocation = startLocation + chunkSize;
+
+    if (endLocation >= results.length) {
+      return {
+        comments: results.slice(startLocation, results.length),
+        isDone: true,
+      };
+    } else {
+      return {
+        comments: results.slice(startLocation, endLocation),
+        isDone: false,
+      };
+    }
   };
+
+  module.getChildComments = async (commentId) => {
+    return await cc.find({ parent: commentId }).toArray();
+  };
+
+  module.playground = async () => {};
 
   return module;
 };

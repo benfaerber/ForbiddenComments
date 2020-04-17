@@ -11,7 +11,7 @@ const User = require('./models/User');
 
 require('dotenv').config();
 
-app.use('/static', express.static('public'));
+app.use('/static', express.static('static'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
@@ -70,16 +70,69 @@ app.get('/deleteComment', async (req, res) => {
   res.json(response);
 });
 
-// Youtube API
-app.get('/video', (req, res) => {
+app.get('/dummyData', async (req, res) => {
+  //commentController.fillDummyData(50);
+  res.end('bye!');
+});
+
+// Youtube API and init comments
+app.get('/load', async (req, res) => {
   const { v } = req.query;
+
   if (v) {
-    youtubeController.getVideo(v, (vid) => {
+    youtubeController.getVideo(v, async (vid) => {
       vid['status'] = 'ok';
-      res.json(vid);
+
+      const { comments, isDone } = await commentController.getParentComments(
+        v,
+        0
+      );
+      res.json({
+        video: vid,
+        comments: comments,
+        isDone: isDone,
+      });
     });
   } else {
     res.json({ status: 'error' });
+  }
+});
+
+// Comment loading
+app.get('/loadCommentChunk', async (req, res) => {
+  const { v, c } = req.query;
+  if (!v) {
+    res.json({ status: 'bad' });
+    return;
+  }
+
+  if (!c) {
+    c = 0;
+  }
+
+  const { comments, isDone } = await commentController.getParentComments(v, c);
+  if (comments) {
+    res.json({
+      comments: comments,
+      isDone: isDone,
+    });
+  } else {
+    res.json({ status: 'none' });
+  }
+});
+
+app.get('/loadChildComments', async (req, res) => {
+  const { c } = req.query;
+  if (!c) {
+    res.json({ status: 'bad' });
+    return;
+  }
+
+  const comments = await commentController.getChildComments(c);
+  if (comments) {
+    res.json({ comments });
+  } else {
+    res.json({ status: 'bad' });
   }
 });
 

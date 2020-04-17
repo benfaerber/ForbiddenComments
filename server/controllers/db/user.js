@@ -18,9 +18,7 @@ module.exports = (db, ObjectId) => {
     await uc.insertOne(json);
   };
 
-  module.playground = async () => {
-    //console.log('hello');
-  };
+  module.playground = async () => {};
 
   return module;
 };

@@ -60,3 +60,27 @@ exports.deleteComment = async (id, user) => {
   await mongo.comment.deleteComment(id);
   return ok;
 };
+
+exports.fillDummyData = async (amount) => {
+  const alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  for (let i = 0; i < amount; i++) {
+    let built = '';
+
+    for (let j = 0; j < Math.random() * 6 + 2; j++) {
+      for (let k = 0; k < Math.random() * 6; k++) {
+        built += alpha[Math.floor(Math.random() * alpha.length - 1)] || 'a';
+      }
+      built += ' ';
+    }
+
+    await exports.makeComment({ v: 'jNQXAC9IVRw', t: built });
+  }
+};
+
+exports.getParentComments = async (videoId, chunk) => {
+  return await mongo.comment.getParentComments(videoId, chunk);
+};
+
+exports.getChildComments = async (commentId) => {
+  return await mongo.comment.getChildComments(commentId);
+};

@@ -11,6 +11,8 @@ module.exports = class Comment {
     this.username = json.username;
     this.pfp = json.pfp;
     this.publishedAt = json.publishedAt;
+    this.editedAt = json.editedAt || -1;
+    this.deleted = json.deleted || false;
   }
 
   toJson() {
@@ -25,6 +27,8 @@ module.exports = class Comment {
       username: this.username,
       pfp: this.pfp,
       publishedAt: this.publishedAt,
+      editedAt: this.editedAt,
+      deleted: this.deleted,
     };
   }
 };

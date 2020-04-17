@@ -8,7 +8,6 @@ const Video = require('../models/Video');
 
 exports.getVideo = (id, callback) => {
   api.getById(id, function (error, result) {
-    console.log(error);
     if (error) {
       callback(null);
     } else {
