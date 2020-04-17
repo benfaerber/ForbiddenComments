@@ -63,6 +63,21 @@ module.exports = (db, ObjectId) => {
     return await cc.find({ parent: commentId }).toArray();
   };
 
+  module.likeComment = async (commentId, userId, action) => {
+    const isLike = action === 'like' || action === 'unlike';
+    const isUn = action === 'unlike' || action === 'undislike';
+    const oppisite = isLike ? { dislikes: userId } : { likes: userId };
+    const positive = isLike ? { likes: userId } : { dislikes: userId };
+
+    const oId = { _id: new ObjectId(commentId) };
+    await cc.updateOne(oId, { $pull: oppisite });
+    if (isUn) {
+      await cc.updateOne(oId, { $pull: positive });
+    } else {
+      await cc.updateOne(oId, { $push: positive });
+    }
+  };
+
   module.playground = async () => {};
 
   return module;

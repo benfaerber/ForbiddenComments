@@ -70,6 +70,25 @@ app.get('/deleteComment', async (req, res) => {
   res.json(response);
 });
 
+app.get('/likeComment', async (req, res) => {
+  const { id, action } = req.query;
+  if (!req.user || !id || !action) {
+    res.json({ status: 'bad' });
+    return;
+  }
+
+  const isPossible = ['like', 'unlike', 'dislike', 'undislike'].find(
+    (elem) => action === elem
+  );
+  if (!isPossible) {
+    res.json({ status: 'bad' });
+    return;
+  }
+
+  const success = commentController.likeComment(id, req.user, action);
+  res.json({ status: success ? 'ok' : 'bad' });
+});
+
 app.get('/dummyData', async (req, res) => {
   //commentController.fillDummyData(50);
   res.end('bye!');

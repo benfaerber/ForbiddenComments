@@ -84,3 +84,20 @@ exports.getParentComments = async (videoId, chunk) => {
 exports.getChildComments = async (commentId) => {
   return await mongo.comment.getChildComments(commentId);
 };
+
+exports.likeComment = async (commentId, user, action) => {
+  let comment = await mongo.comment.getComment(commentId);
+  if (!comment) {
+    return false;
+  }
+
+  const { id: userId } = user;
+  const isLike = action === 'like' || action === 'unlike';
+  const isUn = action === 'unlike' || action === 'undislike';
+  const list = isLike ? comment.likes : comment.dislikes;
+
+  if (isUn || !list.includes(userId)) {
+    mongo.comment.likeComment(commentId, userId, action);
+  }
+  return true;
+};
