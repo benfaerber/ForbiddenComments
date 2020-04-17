@@ -9,6 +9,9 @@ module.exports = class Video {
     this.title = snippet.title;
     this.description = snippet.description;
     this.channel = snippet.channelTitle;
+    this.publishedAt = Math.round(
+      new Date(snippet.publishedAt).getTime() / 1000
+    );
 
     this.view = stats.viewCount;
     this.likes = stats.likeCount;
@@ -18,7 +21,6 @@ module.exports = class Video {
 
   findBestThumbnail(thumbnails) {
     let best = null;
-    console.log(Object.keys(thumbnails));
     Object.keys(thumbnails).forEach((key) => {
       let thumb = thumbnails[key];
       if (!best || thumb.width > best.width) {

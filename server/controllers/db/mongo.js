@@ -1,7 +1,7 @@
 const mongo = require('mongodb').MongoClient;
 const connectionString = 'mongodb://localhost:27017/';
+const ObjectId = require('mongodb').ObjectId;
 
-let users;
 (async () => {
   let client = await mongo.connect(connectionString, {
     useUnifiedTopology: true,
@@ -9,8 +9,8 @@ let users;
   });
   db = client.db('forbid');
   // Import modules
-  exports.user = require('./user')(db);
-  exports.comment = require('./comment')(db);
+  exports.user = require('./user')(db, ObjectId);
+  exports.comment = require('./comment')(db, ObjectId);
   //run playground
   await exports.comment.playground();
 })().catch((err) => console.error(err));

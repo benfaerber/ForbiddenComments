@@ -1,6 +1,6 @@
 const User = require('../../models/User');
 
-module.exports = (db) => {
+module.exports = (db, ObjectId) => {
   var uc = db.collection('users');
   var module = {};
 

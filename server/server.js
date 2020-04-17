@@ -6,6 +6,7 @@ const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 const userController = require('./controllers/user');
 const youtubeController = require('./controllers/youtube');
+const commentController = require('./controllers/comment');
 const User = require('./models/User');
 
 require('dotenv').config();
@@ -50,12 +51,30 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+// Comment
+app.get('/comment', async (req, res) => {
+  const response = await commentController.makeComment(req.query, req.user);
+  res.json(response);
+});
+
+app.get('/editComment', async (req, res) => {
+  const response = await commentController.editComment(req.query, req.user);
+  res.json(response);
+});
+
+app.get('/deleteComment', async (req, res) => {
+  const response = await commentController.deleteComment(
+    req.query.id,
+    req.user
+  );
+  res.json(response);
+});
+
 // Youtube API
 app.get('/video', (req, res) => {
   const { v } = req.query;
   if (v) {
     youtubeController.getVideo(v, (vid) => {
-      console.log(vid);
       vid['status'] = 'ok';
       res.json(vid);
     });
