@@ -1,26 +1,65 @@
-div.circle-avatar {
-  /* make it responsive */
-  width: 64px;
-  height: 64px;
-  display: block;
-  /* div height to be the same as width*/
-  padding-top: 100%;
+/* Comment */
+.comment-view-replies a {
+	color: #0588fc !important;
+}
 
-  /* make it a cirkle */
-  border-radius: 50%;
+.comment-view-replies a:hover {
+	color: #0588fc !important;
+	text-decoration: none;
+}
 
-  /* Centering on image`s center*/
-  background-position-y: center;
-  background-position-x: center;
-  background-repeat: no-repeat;
+.like-button:hover {
+	color: #666666 !important;
+}
 
-  /* it makes the clue thing, takes smaller dimention to fill div */
-  background-size: cover;
+.no-dec:hover {
+	text-decoration: none;
+}
 
-  /* it is optional, for making this div centered in parent*/
-  margin: 0 auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+/* Profile pic */
+
+.pfp {
+	border-radius: 50%;
+}
+
+.pfp-sm {
+	height: 32px;
+	width: 32px;
+}
+
+.pfp-lg {
+	height: 64px;
+	width: 64px;
+}
+
+/* make comment */
+
+.comment-input {
+	height: 20px;
+}
+
+/* video display */
+#video-link {
+	color: #000 !important;
+}
+
+#video-link:hover {
+	text-decoration: none;
+}
+
+/* strikethrough icon */
+#comments-disabled {
+	position: relative;
+}
+
+#comments-ban {
+	position: absolute;
+	top: -8px;
+	left: -8px;
+	font-size: 200%;
+	color: rgba(217, 83, 79, 0.9);
+}
+
+.user-container {
+	padding: 15px;
 }

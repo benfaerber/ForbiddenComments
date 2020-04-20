@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Forbidden Comments</title>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="vendor/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="vendor/jquery-3.5.0.min.js"></script>
+		<script src="vendor/bootstrap.bundle.min.js"></script>
+		<script src="https://kit.fontawesome.com/1ecd8ddeef.js"></script>
+		<script src="vendor/timeago.min.js"></script>
+
+		<!-- Libs -->
+		<script src="js/textarea.js"></script>
+		<script src="js/url.js"></script>
+
+		<!-- Components -->
+		<script src="js/components/Safe.js"></script>
+		<script src="js/components/User.js"></script>
+		<script src="js/components/Comment.js"></script>
+		<script src="js/components/Video.js"></script>
+
+		<!-- Work -->
+		<script src="js/loader.js"></script>
+	</head>
+	<body>
+		<div class="user-container">
+			<button class="btn btn-primary" id="sign-in-button">
+				Sign In with Google <i class="fab fa-google ml-1"></i>
+			</button>
+			<span id="user-banner">
+				<img
+					src="https://placehold.it/64x64"
+					alt="Profile Pic"
+					class="pfp my-pfp"
+					width="64px"
+				/>
+				<span id="username">User</span>
+			</span>
+		</div>
+
+		<div class="container">
+			<h1 class="text-center mb-3">
+				<span class="m-2">Forbidden Comments</span>
+				<img src="img/emoji.png" width="80px" alt="Emoji" />
+			</h1>
+
+			<div class="video row">
+				<div class="col-2"></div>
+				<div class="col-8">
+					<a
+						href="https://youtube.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						id="video-link"
+					>
+						<h4 class="text-center" id="video-title"></h4>
+						<div>
+							<img
+								src="https://placehold.it/1920x1028"
+								alt="Thumbnail"
+								id="video-thumbnail"
+								width="100%"
+							/>
+						</div>
+						<h5 class="text-left mt-2">
+							<span id="video-channel"></span>
+							<small id="video-date" class="text-muted"></small>
+						</h5>
+					</a>
+
+					<div class="text-left">
+						<span class="mr-3">
+							<i class="fa fa-comments" id="comments-disabled">
+								<i class="fa fa-ban" id="comments-ban"></i>
+							</i>
+							<i class="fa fa-comments" id="comments-enabled"></i>
+							<span>YouTube Comments:</span>
+							<span id="video-youtube-comment-count">0</span>
+						</span>
+						<span class="mr-3">
+							<i class="fas fa-comments mr-1"></i>
+							<span>Forbidden Comments:</span>
+							<span id="video-comment-count">0</span>
+						</span>
+					</div>
+
+					<div class="text-left mt-2">
+						<span class="mr-3">
+							<i class="fas fa-eye m-1"></i>
+							<span id="video-views">0</span>
+						</span>
+						<span class="mr-3">
+							<i class="fas fa-thumbs-up m-1"></i>
+							<span id="video-likes">0</span>
+						</span>
+					</div>
+
+					<div class="text-left m-2" id="video-description">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse
+						labore sequi odit qui aliquid nihil, quisquam voluptatibus obcaecati
+						exercitationem facere.
+					</div>
+				</div>
+				<div class="col-2"></div>
+			</div>
+
+			<div class="make-comment row mt-5 mb-5">
+				<div class="profile-img col-lg-1 col-sm-2">
+					<img
+						src="https://placehold.it/64x64"
+						alt="Profile Pic"
+						class="pfp my-pfp"
+						width="64px"
+					/>
+				</div>
+				<div class="col-lg-11 col-sm-10">
+					<textarea
+						id="comment-textarea"
+						cols="30"
+						rows="1"
+						class="form-control comment-input"
+						height="1px"
+						placeholder="Add a comment..."
+					></textarea>
+					<input type="hidden" id="user-id" value="" />
+				</div>
+			</div>
+
+			<div class="comments"></div>
+		</div>
+	</body>
+</html>
