@@ -13,6 +13,7 @@ require('dotenv').config();
 
 console.log('Forbidden Comments NodeJS');
 console.log('Ben Faerber 2020');
+console.log('We are live baby!!');
 
 app.use('/static', express.static('static'));
 app.use(express.json());
@@ -55,17 +56,17 @@ app.get('/', (req, res) => {
 });
 
 // Comment
-app.get('/comment', async (req, res) => {
+app.get('/api/comment', async (req, res) => {
 	const response = await commentController.makeComment(req.query, req.user);
 	res.json(response);
 });
 
-app.get('/editComment', async (req, res) => {
+app.get('/api/editComment', async (req, res) => {
 	const response = await commentController.editComment(req.query, req.user);
 	res.json(response);
 });
 
-app.get('/deleteComment', async (req, res) => {
+app.get('/api/deleteComment', async (req, res) => {
 	const response = await commentController.deleteComment(
 		req.query.id,
 		req.user
@@ -73,7 +74,7 @@ app.get('/deleteComment', async (req, res) => {
 	res.json(response);
 });
 
-app.get('/likeComment', async (req, res) => {
+app.get('/api/likeComment', async (req, res) => {
 	const { id, action } = req.query;
 	if (!req.user || !id || !action) {
 		res.json({ status: 'bad' });
@@ -98,7 +99,7 @@ app.get('/dummyData', async (req, res) => {
 });
 
 // Youtube API and init comments
-app.get('/load', async (req, res) => {
+app.get('/api/load', async (req, res) => {
 	const { v } = req.query;
 
 	if (v) {
@@ -121,7 +122,7 @@ app.get('/load', async (req, res) => {
 });
 
 // Comment loading
-app.get('/loadCommentChunk', async (req, res) => {
+app.get('/api/loadCommentChunk', async (req, res) => {
 	const { v, c } = req.query;
 	if (!v) {
 		res.json({ status: 'bad' });
@@ -143,7 +144,7 @@ app.get('/loadCommentChunk', async (req, res) => {
 	}
 });
 
-app.get('/loadChildComments', async (req, res) => {
+app.get('/api/loadChildComments', async (req, res) => {
 	const { c } = req.query;
 	if (!c) {
 		res.json({ status: 'bad' });
@@ -159,7 +160,7 @@ app.get('/loadChildComments', async (req, res) => {
 });
 
 // User Data
-app.get('/user', (req, res) => {
+app.get('/api/user', (req, res) => {
 	if (req.user) {
 		let json = req.user;
 		json['status'] = 'ok';
@@ -185,7 +186,7 @@ app.get(
 	}
 );
 
-app.get('/logout', function (req, res) {
+app.get('/api/logout', function (req, res) {
 	req.logout();
 	res.redirect('/');
 });

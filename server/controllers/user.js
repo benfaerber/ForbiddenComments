@@ -18,7 +18,7 @@ exports.loadUser = async (id, callback) => {
 
 exports.anon = () => {
 	const data = {
-		id: -1,
+		id: '-1', // Google IDs are strings
 		name: 'Anonymous',
 		pfp: 'http://localhost:5050/img/anon.png',
 		locale: 'ww',

@@ -1,0 +1,9 @@
+Add to backend:
+Forbidden Comment Count
+Rework api to begin with /api/COMMAND
+
+Add to frontend:
+Forbidden Comment Count
+Data retrival from api
+Some way to connect Google Sign in
+Store frontend and static files in thhe server file

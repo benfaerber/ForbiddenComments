@@ -1,13 +1,25 @@
 $(() => {
 	// My user
-	User({
-		id: -1,
+
+	const isLoggedIn = false;
+
+	const anon = {
+		id: '-1',
+		name: 'Anonymous',
+		pfp: 'http://localhost:5500/client/img/anon.png',
+		locale: 'ww',
+	};
+
+	const user = {
+		id: '-114966646482503650877',
 		name: 'Ben Faerber',
 		pfp:
 			'https://lh3.googleusercontent.com/a-/AOh14GjH8rd42Lrv80DaUqiGYCYjbHKaFueIPpyDdgUBpQ',
 		locale: 'en',
 		status: 'ok',
-	});
+	};
+
+	User(isLoggedIn ? user : anon);
 
 	// Video Comment
 	Video({

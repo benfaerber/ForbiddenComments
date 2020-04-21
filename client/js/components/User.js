@@ -1,6 +1,6 @@
 function User(obj) {
 	let { id, name, pfp } = obj;
-	const loggedIn = id !== -1;
+	const loggedIn = id !== '-1'; // Google ids are stored as strings
 	$('#user-id').val(id);
 	$('#comment-textarea').attr(
 		'placeholder',
@@ -10,10 +10,10 @@ function User(obj) {
 	$('.my-pfp').attr('src', pfp);
 
 	if (loggedIn) {
-		$('#user-banner').show();
 		$('#sign-in-button').hide();
+		$('#sign-out-button').show();
 	} else {
-		$('#user-banner').hide();
 		$('#sign-in-button').show();
+		$('#sign-out-button').hide();
 	}
 }

@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forbidden Comments API Tester</title>
-  </head>
-  <body>
-    <h1>Forbidden Comments API Tester</h1>
-    <h3>Auth</h3>
-    <ul>
-      <li><a href="/auth/google">Sign In With Google</a></li>
-      <li><a href="/user">View User</a> *</li>
-      <li><a href="/logout">Logout</a> *</li>
-    </ul>
-    <h3>Comments</h3>
-    <ul>
-      <li><a href="/comment?v=jNQXAC9IVRw&t=Cool Video">Add Comment</a></li>
-      <li>
-        <a href="/comment?v=jNQXAC9IVRw&t=Cool Video&p=5e9940bc291da568c15d3ad6"
-          >Add Child Comment</a
-        >
-      </li>
-      <li>
-        <a href="/loadChildComments?c=5e9940bc291da568c15d3ad6"
-          >Load Comment Children</a
-        >
-      </li>
-      <li>
-        <a href="/editComment?id=5e9940bc291da568c15d3ad6&t=Awesome"
-          >Edit Comment</a
-        >
-        *
-      </li>
-      <li>
-        <a href="/deleteComment?id=5e9940bc291da568c15d3ad6">Delete Comment</a>
-        *
-      </li>
-    </ul>
-    <h3>Comment Opinions</h3>
-    <ul>
-      <li>
-        <a href="/likeComment?id=5e9940bc291da568c15d3ad6&action=like"
-          >Like Comment</a
-        >
-        *
-      </li>
-      <li>
-        <a href="/likeComment?id=5e9940bc291da568c15d3ad6&action=unlike"
-          >Unlike Comment</a
-        >
-        *
-      </li>
-      <li>
-        <a href="/likeComment?id=5e9940bc291da568c15d3ad6&action=dislike"
-          >Dislike Comment</a
-        >
-        *
-      </li>
-      <li>
-        <a href="/likeComment?id=5e9940bc291da568c15d3ad6&action=undislike"
-          >Undislike Comment</a
-        >
-        *
-      </li>
-    </ul>
-    <h3>Initial</h3>
-    <ul>
-      <li><a href="/load?v=jNQXAC9IVRw">Get Video and Initial Comments</a></li>
-    </ul>
-    <p>* requires authentication</p>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Forbidden Comments API Tester</title>
+	</head>
+	<body>
+		<h1>Forbidden Comments API Tester</h1>
+		<h3>Auth</h3>
+		<ul>
+			<li><a href="/auth/google">Sign In With Google</a></li>
+			<li><a href="/api/user">View User</a> *</li>
+			<li><a href="/api/logout">Logout</a> *</li>
+		</ul>
+		<h3>Comments</h3>
+		<ul>
+			<li><a href="/api/comment?v=jNQXAC9IVRw&t=Cool Video">Add Comment</a></li>
+			<li>
+				<a
+					href="/api/comment?v=jNQXAC9IVRw&t=Cool Video&p=5e9940bc291da568c15d3ad6"
+					>Add Child Comment</a
+				>
+			</li>
+			<li>
+				<a href="/api/loadChildComments?c=5e9940bc291da568c15d3ad6"
+					>Load Comment Children</a
+				>
+			</li>
+			<li>
+				<a href="/api/editComment?id=5e9940bc291da568c15d3ad6&t=Awesome"
+					>Edit Comment</a
+				>
+				*
+			</li>
+			<li>
+				<a href="/api/deleteComment?id=5e9940bc291da568c15d3ad6"
+					>Delete Comment</a
+				>
+				*
+			</li>
+		</ul>
+		<h3>Comment Opinions</h3>
+		<ul>
+			<li>
+				<a href="/api/likeComment?id=5e9940bc291da568c15d3ad6&action=like"
+					>Like Comment</a
+				>
+				*
+			</li>
+			<li>
+				<a href="/api/likeComment?id=5e9940bc291da568c15d3ad6&action=unlike"
+					>Unlike Comment</a
+				>
+				*
+			</li>
+			<li>
+				<a href="/api/likeComment?id=5e9940bc291da568c15d3ad6&action=dislike"
+					>Dislike Comment</a
+				>
+				*
+			</li>
+			<li>
+				<a href="/api/likeComment?id=5e9940bc291da568c15d3ad6&action=undislike"
+					>Undislike Comment</a
+				>
+				*
+			</li>
+		</ul>
+		<h3>Initial</h3>
+		<ul>
+			<li>
+				<a href="/api/load?v=jNQXAC9IVRw">Get Video and Initial Comments</a>
+			</li>
+		</ul>
+		<p>* requires authentication</p>
+	</body>
 </html>
